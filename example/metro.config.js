@@ -26,6 +26,10 @@ const config = {
   resolver: {
     ...defaultConfig.resolver,
 
+    // We need it to handle svg files using react-native-svg and react-native-svg-transformer
+    assetExts: defaultConfig.resolver.assetExts.filter((ext) => ext !== 'svg'),
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'svg'],
+
     blacklistRE: exclusionList(
       modules.map(
         (m) =>
@@ -37,6 +41,13 @@ const config = {
       acc[name] = path.join(__dirname, 'node_modules', name);
       return acc;
     }, {}),
+  },
+
+  transformer: {
+    ...defaultConfig.transformer,
+
+    // We need it to handle svg files using react-native-svg and react-native-svg-transformer
+    babelTransformerPath: require.resolve('react-native-svg-transformer'),
   },
 };
 
