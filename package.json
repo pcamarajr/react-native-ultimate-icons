@@ -155,5 +155,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-svg": "13.4.0"
   }
 }
