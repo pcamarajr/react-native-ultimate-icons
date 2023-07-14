@@ -61,28 +61,26 @@ export class UltimateIcons<
     size,
     onPress,
   }) => {
-    const { icons, sizes, defaultSize, defaultColor, colors } = this;
+    const { icons, sizes, defaultSize, defaultColor, colors, baseSvgSize } =
+      this;
 
-    const SvgIcon = icons[name];
-    const defaultSizeValue = sizes[defaultSize];
-    const iconSize = sizes[size ?? defaultSize] ?? defaultSizeValue;
-    const iconColor = colors[color ?? defaultColor] ?? defaultColor;
+    const SvgIcon = icons[name] as FC<SvgProps>;
+    const iconSize = sizes[size ?? defaultSize] ?? baseSvgSize;
+    const iconColor = colors[color ?? defaultColor];
+    const scale = iconSize / baseSvgSize;
     const containerStyle = {
       width: iconSize,
       height: iconSize,
     };
 
     return (
-      // TODO: Add a fallback component
-      <Suspense fallback={null}>
+      <Suspense fallback={<View style={containerStyle} />}>
         <View style={containerStyle}>
-          {/* TODO: Check out why this TS error */}
           <SvgIcon
             onPress={onPress}
             stroke={iconColor}
             preserveAspectRatio="xMidYMid meet"
-            // TODO: Check out why the scale is not working
-            // transform={`scale(${scale})`}
+            transform={`scale(${scale})`}
           />
         </View>
       </Suspense>
