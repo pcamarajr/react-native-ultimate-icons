@@ -69,6 +69,7 @@
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-builder-bob": "^0.21.2",
+    "react-native-svg": "^13.4.0",
     "release-it": "^15.0.0",
     "typescript": "^5.0.2"
   },
@@ -78,7 +79,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-svg": "^13.4.0"
+    "react-native-svg": "*"
   },
   "engines": {
     "node": ">= 16.0.0"
