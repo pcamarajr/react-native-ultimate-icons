@@ -1,6 +1,6 @@
 {
   "name": "react-native-ultimate-icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The only React Native icon library you need",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
