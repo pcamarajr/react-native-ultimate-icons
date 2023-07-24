@@ -4,6 +4,13 @@
 It
 provides the flexibility to load only the icons you need and offers type safety and code completion with TypeScript.
 
+## Roadmap (with no deadline 😬)
+
+- Bring more flexibility to the Color prop
+- Implement at least one Icon Library read to use: some of Material Icons, Bootstrap Icons, other!?
+- Implement a cli to copy icons and generate the mapping
+- Are you using it? What problem have you find already? What problems did you solve with it already? [LUK](https://github.com/pcamarajr/react-native-ultimate-icons/discussions)
+
 ## Installation
 
 To use `react-native-ultimate-icons`, you need to install the following dependencies:
